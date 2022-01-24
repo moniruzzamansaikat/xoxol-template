@@ -1,0 +1,460 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap');
+
+body {
+  font-family: 'Arimo', sans-serif;
+  overflow-x: hidden !important;
+}
+
+// vars
+$primary-color: #f36b3e;
+$light-color: #f0f0f0;
+
+// global
+.btn {
+  box-shadow: 0 0 0 !important;
+  border: 0;
+  padding: 10px 2rem;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 10px;
+  transition: background 1s ease-in-out;
+}
+
+.btn:hover,
+.btn:focus {
+  box-shadow: 0 0 0 !important;
+  border: 0;
+}
+
+.btn-primary {
+  background: linear-gradient(
+    to right,
+    $primary-color,
+    darken($primary-color, 20%)
+  );
+  color: $light-color;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background: linear-gradient(
+    to right,
+    darken($primary-color, 20%),
+    $primary-color
+  );
+  color: $light-color;
+}
+
+.btn-secondary {
+  background-color: $light-color;
+  color: $primary-color;
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+  background-color: $light-color !important;
+  color: $primary-color !important;
+  opacity: 0.8;
+}
+
+.section-title {
+  position: relative;
+  max-width: 400px;
+  font-size: 2.5rem;
+  line-height: 3.1rem;
+  font-weight: 900;
+  color: #000;
+}
+
+.section-title:not(.no-border)::before {
+  content: '';
+  position: absolute;
+  top: -30px;
+  left: 0;
+  width: 70px;
+  height: 7px;
+  border-radius: 4px;
+  background-color: #f36b3e;
+  opacity: 0.5;
+}
+
+.section-link {
+  font-weight: bold;
+  color: $primary-color;
+  text-decoration: none;
+  transition: 0.2s ease-in-out;
+}
+
+.section-link:hover,
+.section-link:focus {
+  text-decoration: underline;
+  color: darken($primary-color, 10%);
+}
+
+section {
+  padding-top: 8rem;
+  margin: 2rem 0;
+}
+
+// navbar section
+.navbar {
+  background-color: $primary-color !important;
+  padding: 2rem;
+
+  &.scrolled {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 2rem;
+    background-color: $primary-color !important;
+    z-index: 1000000;
+  }
+
+  .navbar-brand {
+    color: white !important;
+    font-size: 2rem;
+    font-weight: bolder;
+  }
+
+  button {
+    outline: 0 !important;
+    box-shadow: 0 0 0 !important;
+    border: 0;
+    font-size: 1.6rem;
+  }
+
+  .nav-link {
+    color: #fff !important;
+    margin: 0 1rem;
+
+    &:hover {
+      color: darken($light-color, 10%) !important;
+    }
+  }
+}
+
+// hero section
+section.hero {
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+  background-color: $primary-color;
+  position: relative;
+
+  #wave {
+    position: absolute;
+    bottom: -240px;
+    z-index: -1;
+  }
+
+  .hero-text {
+    p {
+      color: #f0f0f0;
+      font-weight: 100;
+      letter-spacing: 2px;
+      font-size: 13px;
+    }
+
+    h1 {
+      font-size: 3.2rem;
+      color: #f0f0f0;
+      font-weight: 800;
+    }
+  }
+
+  .container {
+    padding-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-image {
+    text-align: center;
+
+    img {
+      width: 25rem;
+      max-height: 28.2rem;
+    }
+  }
+}
+
+// spnsors section
+section.sponsors {
+  max-width: 100vw;
+  overflow-x: hidden;
+
+  .container {
+    display: flex;
+    padding-bottom: 2rem;
+    user-select: none;
+    max-width: 100%;
+    // animation: continuous 15s infinite linear;
+    // transform: translateX(120%);
+
+    @keyframes continuous {
+      0% {
+        transform: translateX(120%);
+      }
+
+      100% {
+        transform: translateX(-120%);
+      }
+    }
+
+    img {
+      display: inline-block;
+      margin-right: 3rem;
+    }
+
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+  }
+}
+
+// features section
+section.features {
+  padding-top: 8rem;
+
+  .left {
+    padding-right: 2rem;
+  }
+
+  .right {
+    img {
+      width: 60px;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      color: #000;
+      font-weight: bolder;
+      margin-top: 0.6rem;
+      margin-bottom: 2rem;
+      position: relative;
+
+      &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -20px;
+        width: 60px;
+        height: 2px;
+        background-color: #f36b3e;
+        opacity: 0.5;
+      }
+    }
+  }
+
+  p {
+    color: #7c7c7c;
+  }
+}
+
+// courses
+section.courses {
+  #main-wrapper {
+    display: flex;
+  }
+
+  .controller {
+    display: flex;
+
+    a {
+      align-self: baseline;
+      margin-right: 10px;
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+      padding: 1rem 2rem;
+      border-radius: 4px;
+      background-color: rgb(175, 175, 175);
+
+      &.active {
+        background-color: $primary-color;
+        color: $light-color;
+      }
+    }
+  }
+
+  .scroller {
+    display: flex;
+    cursor: grab;
+    overflow-x: scroll;
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+
+    .card {
+      min-width: 300px;
+
+      span {
+        color: rgb(112, 112, 112);
+      }
+      span.number {
+        color: $primary-color;
+        font-weight: 700;
+      }
+
+      h4 {
+        font-size: 1.2rem;
+      }
+
+      img {
+        height: 12rem;
+      }
+    }
+  }
+}
+
+// plans section
+section.plans {
+  .card {
+    border: 0;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    transition: 0.3s ease-in-out;
+    padding: 2rem;
+
+    &:hover {
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+        rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+
+      // show pricing button on hover
+      .btn {
+        visibility: visible;
+      }
+    }
+
+    .btn {
+      visibility: hidden;
+    }
+
+    img {
+      width: 70px;
+      margin: 1rem 0;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      color: gray;
+      margin-bottom: 1rem;
+      font-size: 0.8rem;
+
+      sup {
+        color: $primary-color;
+        font-size: 1rem;
+        display: inline-block;
+        font-weight: bold;
+      }
+      span {
+        color: $primary-color;
+        font-size: 2rem;
+        font-weight: bold;
+      }
+      sub {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+
+// footer section
+footer.footer {
+  h4 {
+    font-size: 1.1rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+  }
+
+  .footer-contact {
+    p {
+      font-weight: bold;
+    }
+
+    .phone {
+      font-weight: bold;
+      color: $primary-color;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    font-size: 0.8rem;
+    color: darken($light-color, 30%);
+
+    &:hover {
+      color: darken($light-color, 90%);
+    }
+  }
+}
+
+// media queries
+// mobile
+@media (max-width: 992px) {
+  .navbar {
+    .nav-link {
+      margin: 0;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  section.hero {
+    #wave {
+      bottom: -100px;
+    }
+  }
+
+  .navbar-nav.ms-5 {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 99999;
+    left: -45px;
+    min-height: 100vh;
+    background-color: $primary-color;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    .mobile-menu {
+      position: absolute;
+      font-size: 1.6rem;
+      display: block !important;
+      top: 3rem;
+      right: 3.2rem;
+      cursor: pointer;
+    }
+
+    .nav-link {
+      text-align: center;
+      font-size: 2rem;
+      transition: 0.2s ease-in;
+
+      &:hover {
+        letter-spacing: 5px;
+      }
+    }
+  }
+
+  section.courses {
+    #main-wrapper {
+      display: grid !important;
+
+      .controller {
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 520px) {
+  html {
+    font-size: 14px;
+  }
+}
