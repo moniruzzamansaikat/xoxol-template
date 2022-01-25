@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap');
 
+html,
 body {
   font-family: 'Arimo', sans-serif;
-  overflow-x: hidden !important;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 // vars
@@ -98,16 +100,17 @@ section {
 // navbar section
 .navbar {
   background-color: $primary-color !important;
-  padding: 2rem;
+  position: relative;
+  padding: 2rem 0;
 
   &.scrolled {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 10px 2rem;
+    padding: 10px 0;
     background-color: $primary-color !important;
-    z-index: 1000000;
+    z-index: 100000;
     transition: 0.4s ease-out;
   }
 
@@ -228,7 +231,7 @@ section.features {
     }
 
     h3 {
-      font-size: 1.2rem;
+      font-size: 2rem;
       color: #000;
       font-weight: bolder;
       margin-top: 0.6rem;
@@ -457,6 +460,6 @@ footer.footer {
 
 @media (max-width: 520px) {
   html {
-    font-size: 14px;
+    font-size: 15px;
   }
 }
